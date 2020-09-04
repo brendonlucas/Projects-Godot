@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/OceanShader.tres" type="Material" id=3]
+[ext_resource path="res://Fonts/Projected-grid.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/Panel.tscn" type="PackedScene" id=5]
+
+[node name="Node" type="Node"]
+
+[node name="Ocean" type="ImmediateGeometry" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.38286, 0 )
+material_override = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Panel" parent="." instance=ExtResource( 5 )]

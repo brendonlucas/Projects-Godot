@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "ResourceFormatLoader",
+"class": "HTerrainDataLoader",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
+}, {
+"base": "ResourceFormatSaver",
+"class": "HTerrainDataSaver",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
+} ]
 _global_script_class_icons={
-
+"HTerrainDataLoader": "",
+"HTerrainDataSaver": ""
 }
 
 [application]
@@ -25,7 +36,7 @@ window/vsync/use_vsync=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "SIsilicon.vfx.godrays" )
+enabled=PoolStringArray( "SIsilicon.vfx.godrays", "zylann.hterrain" )
 
 [input]
 
@@ -104,6 +115,11 @@ caminhando={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
  ]
 }
+toggle_mouse={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -114,7 +130,7 @@ caminhando={
 
 quality/2d/use_nvidia_rect_flicker_workaround=true
 threads/thread_model=2
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Fonts/default_env.tres"
 quality/godrays/sample_number=50
 quality/godrays/use_pcf5=false
 quality/godrays/dither_amount=1.0

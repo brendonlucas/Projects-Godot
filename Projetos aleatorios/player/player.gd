@@ -55,7 +55,10 @@ func add_atake():
 func _physics_process(delta):
 	movimentos(delta)
 	ataque(delta)
-
+	
+	if Input.is_action_just_pressed("toggle_mouse"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 func ataque(delta):
 	if timer_reset_atak.time_left == 0 and !resetado:
 			print("demorou")
