@@ -30,6 +30,10 @@ config/name="Projetos aleatorios"
 run/main_scene="res://mapas aleatorios/Map_limpo.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Gamestate="*res://dados entre scene/gamestate.gd"
+
 [display]
 
 window/vsync/use_vsync=false

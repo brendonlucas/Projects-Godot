@@ -164,7 +164,7 @@ max_value = 5.0
 step = 0.1
 value = 3.0
 
-[node name="opction2" type="Control" parent="Menu_2"]
+[node name="sombra" type="Control" parent="Menu_2"]
 anchor_left = -0.00575816
 anchor_top = 0.328333
 anchor_right = 1.0
@@ -174,30 +174,33 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Label" type="Label" parent="Menu_2/opction2"]
+[node name="Label" type="Label" parent="Menu_2/sombra"]
 anchor_right = 0.281
 anchor_bottom = 0.382
 margin_right = -0.244003
 margin_bottom = -0.0100021
 custom_fonts/font = SubResource( 3 )
-text = "opction2"
+text = "Sombra"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HSlider" type="HSlider" parent="Menu_2/opction2"]
+[node name="OptionButton" type="OptionButton" parent="Menu_2/sombra"]
 anchor_left = 0.061
-anchor_top = 0.326
-anchor_right = 0.896
-anchor_bottom = 0.903
-margin_left = 0.219004
-margin_top = -0.00799942
-margin_right = 0.18399
-margin_bottom = 0.00399399
-max_value = 5.0
-step = 0.1
-value = 2.0
+anchor_top = 0.4
+anchor_right = 0.891
+anchor_bottom = 0.964
+margin_left = 0.0360012
+margin_top = -8.01086e-05
+margin_right = 0.116028
+margin_bottom = -0.020195
+text = "Sombra 1"
+items = [ "Sombra 1", null, false, 0, null, "Sombra 2", null, false, 1, null, "Sombra 3", null, false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="opction3" type="Control" parent="Menu_2"]
 anchor_left = -0.00575816
@@ -246,7 +249,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Menu_2/opction4"]
+[node name="Button_aplicar" type="Button" parent="Menu_2/opction4"]
 anchor_left = 0.891
 anchor_top = 0.391
 anchor_right = 0.891
@@ -265,4 +268,5 @@ __meta__ = {
 [connection signal="pressed" from="Menu_1/buttons/Button_continuar" to="." method="_on_Button_continuar_pressed"]
 [connection signal="pressed" from="Menu_1/buttons/Button_opcoes" to="." method="_on_Button_opcoes_pressed"]
 [connection signal="pressed" from="Menu_1/buttons/Button_sair" to="." method="_on_Button_sair_pressed"]
+[connection signal="pressed" from="Menu_2/opction4/Button_aplicar" to="." method="_on_Button_aplicar_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

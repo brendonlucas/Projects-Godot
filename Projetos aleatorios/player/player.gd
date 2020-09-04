@@ -38,9 +38,10 @@ var resetado = true
 var ultimo_atake
 
 var atacando
-
+var luz 
 
 func _ready():
+	luz = get_parent().get_node("Sol")
 	timer_1 = get_node("Timer")
 	timer_reset_atak = get_node("Timer fim")
 	player = get_node(".")
@@ -65,7 +66,7 @@ func ataque(delta):
 			resetado = true
 			atacks = 0
 			
-	if Input.is_action_just_pressed("atacar") and timer_1.time_left == 0:
+	if Input.is_action_just_pressed("atacar") and timer_1.time_left == 0 and moviments_active:
 		timer_reset_atak.start()
 		timer_1.start()
 		resetado = false
@@ -86,7 +87,7 @@ func ataque(delta):
 		if atacks == 3:
 			atacks = 0
 			
-	if Input.is_action_just_pressed("ataque_pesado"):
+	if Input.is_action_just_pressed("ataque_pesado") and moviments_active:
 		animation.play("attack_charge_1", 0.2)
 		atacks = 0
 		atacando = true
@@ -128,7 +129,11 @@ func movimentos(delta):
 		atacando = false
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !atacando:
-		velocity.y += jump_power
+		#velocity.y += jump_power
+		#print(luz.get_shadow_mode())
+		#luz.set_shadow_mode(2)
+		pass
+		
 		
 	if cc == 0 and !is_moving:
 		cc = 0.1

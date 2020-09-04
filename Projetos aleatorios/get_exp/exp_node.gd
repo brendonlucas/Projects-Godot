@@ -71,3 +71,9 @@ func randomNumber():
 	rng.randomize()
 	var my_random_number = rng.randi_range(1, 300)
 	return my_random_number
+
+
+
+
+
+

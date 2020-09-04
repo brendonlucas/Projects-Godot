@@ -1,18 +1,18 @@
 extends Control
 
-var scene_change = preload("res://dados entre scene/cena 2.tscn")
+var scene_change = "res://dados entre scene/cena 2.tscn"
 func _ready():
 	pass 
 	
 func _process(delta):
 	if Input.is_action_just_pressed("direita"):
-		print("cena 1")
 		
+		Gamestate.players_ready.append(Gamestate.dado+1)
+		print("cena 1", Gamestate.players_ready)
 	if Input.is_action_just_pressed("frente"):
 		get_tree().change_scene(scene_change)
-
 	if Input.is_action_just_pressed("esquerda"):
-		get_tree().get_root().add_child(scene_change)
+		#get_tree().get_root().add_child(scene_change)
 		#get_tree().change_scene(scene_change)
 		pass
 		
