@@ -11,8 +11,7 @@ var GRAVITY = 0.98
 var y_velocity : float
 var velocity = Vector3()
 
-const H_LOOK_SENS = 0.6
-const V_LOOK_SENS = 0.4
+
 
 var cam
 var player

@@ -3,8 +3,9 @@ extends Node
 var dado :int = 0
 var players = {}
 var players_ready = []
-
+var camera_sensibilidade :float = 0.3
 var type_shadow_mode = 0
+var view_distance = 100
 
 # exp variaveis
 var nivel : int
