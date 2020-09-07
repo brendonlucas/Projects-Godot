@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://default_ennv.tres" type="Environment" id=1]
 [ext_resource path="res://shaders/Sky_with_simple_colors.shader" type="Shader" id=2]
 [ext_resource path="res://shaders/Clouds.shader" type="Shader" id=3]
 [ext_resource path="res://shaders/noise.png" type="Texture" id=4]
-
+[ext_resource path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" type="Script" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -337,9 +337,9 @@ viewport_path = NodePath("clouds_viewport")
 [sub_resource type="ShaderMaterial" id=5]
 resource_local_to_scene = true
 shader = ExtResource( 2 )
-shader_param/DAY_TIME = Vector2( 3, 0.401112 )
-shader_param/SUN_POS = Vector3( 0.742754, 0.669564, 0 )
-shader_param/MOON_POS = Vector3( -0.525207, -0.669564, 0.525207 )
+shader_param/DAY_TIME = Vector2( 5, 0.389856 )
+shader_param/SUN_POS = Vector3( -0.979238, -0.202715, 0 )
+shader_param/MOON_POS = Vector3( 0.692426, 0.202715, -0.692426 )
 shader_param/MOON_PHASE = -0.2
 shader_param/LIGHTING_STRENGTH = null
 shader_param/LIGHTTING_POS = null
@@ -368,21 +368,28 @@ moon_radius = 0.2
 clouds_size = 2.0
 clouds_height = 0.35
 quality = 0.2
-hours = 10
+hours = 20
 minutes = 49
-seconds = 20
-time_of_day = 0.450926
+seconds = 10
+time_of_day = 0.867488
 night_level_light = 0.05
 
 [node name="Env" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
 
 [node name="Sun_Moon" type="DirectionalLight" parent="."]
-transform = Transform( -4.37114e-08, 0.669565, -0.742754, 0, 0.742756, 0.669563, 1, 2.92676e-08, -3.24668e-08, -0.742754, 0.669564, 0 )
-light_energy = 0.75
+transform = Transform( -4.37114e-08, 0.202716, 0.979237, 0, 0.97924, -0.202715, -1, -8.86099e-09, -4.28038e-08, 0.979238, -0.202715, 0 )
+light_color = Color( 0.844057, 0.661014, 0.647464, 1 )
+light_energy = 0.228804
 shadow_enabled = true
 shadow_color = Color( 0.3, 0.3, 0.3, 1 )
 directional_shadow_depth_range = 1
+
+[node name="GodRays" type="Spatial" parent="Sun_Moon"]
+script = ExtResource( 5 )
+exposure = 0.5
+attenuation = 2.0
+light_size = 0.5
 
 [node name="clouds_viewport" type="Viewport" parent="."]
 size = Vector2( 1024, 1024 )

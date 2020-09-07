@@ -11,4 +11,4 @@ shape = SubResource( 1 )
 spring_length = 3.0
 
 [node name="Camera" type="Camera" parent="CameraBoom"]
-far = 500.0
+far = 1000.0
